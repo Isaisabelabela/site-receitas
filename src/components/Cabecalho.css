@@ -1,0 +1,118 @@
+.cabecalho {
+  background-color: var(--roxo-figo);
+  padding: 30px 20px 0;
+  text-align: center;
+  border-bottom: 4px solid var(--verde-figo);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
+}
+
+.cabecalho-conteudo {
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.cabecalho-titulo {
+  color: var(--bege-claro);
+  font-size: 3.2em;
+  margin-bottom: 5px;
+  font-weight: 300;  /* Fonte mais fina para sofisticação */
+  letter-spacing: 2px;  /* Espaçamento entre letras */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Georgia', 'Times New Roman', serif;  /* Fonte mais elegante */
+}
+
+.cabecalho-subtitulo {
+  color: var(--bege-claro);
+  font-size: 1.2em;
+  opacity: 0.8;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.cabecalho-menu {
+  display: flex;
+  justify-content: center;
+  gap: 40px;  
+  margin-top: 20px;
+  padding-bottom: 15px;
+}
+
+.menu-item {
+  background: none;
+  border: none;
+  color: var(--bege-claro);
+  font-size: 1.2em;
+  font-weight: 400;
+  padding: 8px 0;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.menu-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--verde-figo);
+  transition: width 0.3s ease;
+}
+
+.menu-item:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.menu-item:hover::after {
+  width: 100%;
+}
+
+.menu-item.ativo {
+  opacity: 1;
+  font-weight: 500;
+  color: var(--bege-claro);
+}
+
+.menu-item.ativo::after {
+  width: 100%;
+  height: 3px;
+  background-color: var(--verde-figo);
+}
+
+.menu-item span {
+  margin-right: 8px;
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    padding: 20px 15px 0;
+  }
+  
+  .cabecalho-titulo {
+    font-size: 2.5em;
+  }
+  
+  .cabecalho-subtitulo {
+    font-size: 1em;
+  }
+  
+  .cabecalho-menu {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .menu-item {
+    font-size: 1em;
+  }
+}
